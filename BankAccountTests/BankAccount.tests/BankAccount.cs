@@ -8,5 +8,17 @@ namespace BankAccount.tests;
 
 public class BankAccount
 {
+    public Money Balance { get; private set; }
 
+    public BankAccount(Money initialBalance)
+    {
+        this.Balance= initialBalance;
+    }
+    public void Withdraw(Money amount)
+    {
+        if (Balance.Amount < amount.Amount)
+        {
+            throw new InvalidOperationException("Insufficient funds");
+        } 
+    }
 }

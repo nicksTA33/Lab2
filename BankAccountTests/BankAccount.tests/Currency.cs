@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace BankAccount.tests
 {
-    public class Money
+    public enum Currency
     {
-        public decimal Amount { get; set; }
-        public Currency Currency { get; set; }
-        
+        USD,
+        UAH,
+        EUR
     }
 }
