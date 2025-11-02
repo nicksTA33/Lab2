@@ -1,4 +1,6 @@
-﻿namespace BankAccount.tests;
+﻿using System.ComponentModel;
+
+namespace BankAccount.tests;
 
 public class BankAccount
 {
@@ -11,6 +13,11 @@ public class BankAccount
 
     public void Replenish(Money amount) 
     {
+        if (Balance.Currency != amount.Currency) 
+        {
+            throw new InvalidEnumArgumentException("Wrong currency");
+        }
+        
         Balance.Amount += amount.Amount;
     }
 }
