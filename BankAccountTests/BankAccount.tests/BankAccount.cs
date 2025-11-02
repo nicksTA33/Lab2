@@ -11,13 +11,10 @@ public class BankAccount
         Balance = initialBalance;
     }
 
-    public void Replenish(Money amount) 
-    {
-        if (Balance.Currency != amount.Currency) 
+    public void Replenish(Money amount) =>
+        Balance = (Balance.Currency == amount.Currency) switch
         {
-            throw new InvalidEnumArgumentException("Wrong currency");
-        }
-        
-        Balance.Amount += amount.Amount;
-    }
+            true => new(amount.Amount + Balance.Amount, Balance.Currency),
+            _ => throw new InvalidEnumArgumentException("Wrong currency")
+        };
 }
