@@ -24,5 +24,7 @@ public class BankAccount
         {
             throw new ArgumentException("Interest rate cannot be non-positive");
         }
+
+        Balance = new(Balance.Amount + Balance.Amount * interestRate, Balance.Currency);
     }
 }
