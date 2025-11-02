@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BankAccount.tests;
+﻿namespace BankAccount.tests;
 
 public class BankAccount
 {
+    public Money Balance { get; private set; }
 
+    public BankAccount(Money initialBalance)
+    {
+        Balance = initialBalance;
+    }
+
+    public void Replenish(Money amount) 
+    { 
+        throw new NotImplementedException();
+    }
 }
