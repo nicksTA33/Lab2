@@ -27,4 +27,13 @@ public class BankAccountTests
     {
         Assert.Throws<ArgumentException>(() => _account.InterestAccrual(-0.1m));
     }
+
+    [Theory]
+    [InlineData(0.1, 11)]
+    [InlineData(0.2, 12)]
+    public void InterestAccrual_BalanceIncreases_Correctly(decimal interestRate, decimal excpected)
+    {
+        _account.InterestAccrual(interestRate);
+        Assert.Equal(_account.Balance.Amount, excpected);
+    }
 }
