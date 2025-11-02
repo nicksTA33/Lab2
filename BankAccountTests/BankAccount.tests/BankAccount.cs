@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,5 +21,10 @@ public class BankAccount
         {
             throw new InvalidOperationException("Insufficient funds");
         } 
+
+        if (amount.Currency != Balance.Currency)
+        {
+            throw new InvalidEnumArgumentException("Wrong currency");
+        }
     }
 }
