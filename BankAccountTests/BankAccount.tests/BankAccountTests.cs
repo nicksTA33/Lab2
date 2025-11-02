@@ -36,4 +36,5 @@ public class BankAccountTests
         _account.InterestAccrual(interestRate);
         Assert.Equal(_account.Balance.Amount, excpected);
     }
+
 }
