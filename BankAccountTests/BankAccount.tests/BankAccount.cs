@@ -26,5 +26,7 @@ public class BankAccount
         {
             throw new InvalidEnumArgumentException("Wrong currency");
         }
+
+
     }
 }
