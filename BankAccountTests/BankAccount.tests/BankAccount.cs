@@ -10,7 +10,7 @@ public class BankAccount
     }
 
     public void Replenish(Money amount) 
-    { 
-        throw new NotImplementedException();
+    {
+        Balance.Amount += amount.Amount;
     }
 }
