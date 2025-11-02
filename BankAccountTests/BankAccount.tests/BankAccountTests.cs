@@ -5,7 +5,7 @@ namespace BankAccount.tests
 {
     public class BankAccountTests
     {
-        BankAccount _account = new BankAccount(new Money(10, Currency.EUR));
+        BankAccount _account = new BankAccount(new Money(10, Currency.USD));
 
         [Fact]
         public void Withdraw_WithdrawingMoreThanAvailable_ThrowsInvalidOperation()
@@ -28,8 +28,6 @@ namespace BankAccount.tests
         [Theory]
         [InlineData(1, 9)]
         [InlineData(2, 8)]
-
-
         public void Withdraw_BalanceDecreases_Correctly(decimal money, decimal expected)
         {
             _account.Withdraw(new Money(money, Currency.USD));

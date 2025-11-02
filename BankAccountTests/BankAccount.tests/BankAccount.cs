@@ -27,6 +27,6 @@ public class BankAccount
             throw new InvalidEnumArgumentException("Wrong currency");
         }
 
-
+        Balance.Amount -= amount.Amount;
     }
 }
