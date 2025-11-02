@@ -18,5 +18,11 @@ public class BankAccount
             _ => throw new InvalidEnumArgumentException("Wrong currency")
         };
 
-    public void InterestAccrual(decimal interestRate) => throw new NotImplementedException();
+    public void InterestAccrual(decimal interestRate) 
+    {
+        if (interestRate <= 0) 
+        {
+            throw new ArgumentException("Interest rate cannot be non-positive");
+        }
+    }
 }
