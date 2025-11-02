@@ -8,6 +8,7 @@ namespace BankAccount.tests
 {
     public class Money
     {
+        
         public decimal Amount { get; set; }
         public Currency Currency { get; set; }
 
@@ -16,6 +17,8 @@ namespace BankAccount.tests
             Amount = amount;
             Currency = currency;
         }
+
+        
         
     }
 }

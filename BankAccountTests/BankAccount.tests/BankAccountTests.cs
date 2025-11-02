@@ -34,5 +34,13 @@ namespace BankAccount.tests
             Assert.Equal(_account.Balance.Amount, expected);
         }
 
+        [Fact]
+
+        public void MoneyAmount_NegativeAmount_ThrowsArgumentException()
+        {
+            Assert.Throws<ArgumentException>(() => new Money(-1, Currency.UAH));
+        }
+
+
     }
 }
