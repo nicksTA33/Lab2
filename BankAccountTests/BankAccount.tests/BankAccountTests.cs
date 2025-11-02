@@ -22,5 +22,9 @@ public class BankAccountTests
         Assert.Throws<InvalidEnumArgumentException>(() => _account.Replenish(amount));
     }
 
-    
+    [Fact]
+    public void InterestAccrual_Non_PositiveInterestRate_ThrowsArgumentException()
+    {
+        Assert.Throws<ArgumentException>(() => _account.InterestAccrual(-0.1m));
+    }
 }

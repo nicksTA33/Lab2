@@ -17,4 +17,6 @@ public class BankAccount
             true => new(amount.Amount + Balance.Amount, Balance.Currency),
             _ => throw new InvalidEnumArgumentException("Wrong currency")
         };
+
+    public void InterestAccrual(decimal interestRate) => throw new NotImplementedException();
 }
